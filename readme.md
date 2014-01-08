@@ -20,7 +20,7 @@
 - Live preview and Matrix support
 - Responsive and touch friendly
 
-![Entry Screenshot](https://github.com/jack-pallot/Craft-range-slider-fieldtype/master/rangesliderfield/resources/img/entry-screenshot.jpg)
+![Entry Screenshot](http://jackpallot.me/images/entry-screenshot.jpg)
 
-![Settings Screenshot](https://github.com/jack-pallot/Craft-range-slider-fieldtype/master/rangesliderfield/resources/img/settings-screenshot.jpg)
+![Settings Screenshot](http://jackpallot.me/images/settings-screenshot.jpg)
 
