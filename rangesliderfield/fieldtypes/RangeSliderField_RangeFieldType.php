@@ -3,12 +3,10 @@ namespace Craft;
 
 class RangeSliderField_RangeFieldType extends BaseFieldType
 {
-
-    public function getName()
-    {
-        return Craft::t('Range Slider');
-    }
-
+	public function getName()
+	{
+		return Craft::t('Range Slider');
+	}
 	/**
 	 * Defines the settings.
 	 *
@@ -20,10 +18,9 @@ class RangeSliderField_RangeFieldType extends BaseFieldType
 		return array(
 			'minValue'   => array(AttributeType::Number,'default' => ('0'), 'required' => true),
 			'maxValue'   => array(AttributeType::Number,'default' => ('1'), 'required' => true),
-            'stepsValue'   => array(AttributeType::Number,'default' => ('0'))
+			'stepsValue'   => array(AttributeType::Number,'default' => ('0'))
 		);
 	}
-
 	/**
 	 * Returns the field's settings HTML.
 	 *
@@ -35,27 +32,25 @@ class RangeSliderField_RangeFieldType extends BaseFieldType
 			'settings' => $this->getSettings()
 		));
 	}
+	/**
+	 * Display fieldtype
+	 *
+	 * @param string $name  Our fieldtype handle
+	 * @return string Return our fields input template
+	 */
+	public function getInputHtml($name, $value)
+	{
+		// Include CSS
+		craft()->templates->includeCssResource('RangeSliderField/css/sliderField.css');
+		// Include JS
+		craft()->templates->includeJsResource('RangeSliderField/js/sliderField.min.js');
 
-    /**
-     * Display our fieldtype
-     *
-     * @param string $name  Our fieldtype handle
-     * @return string Return our fields input template
-     */
-    public function getInputHtml($name, $value)
-    {
-        // Load css
-        craft()->templates->includeCssResource('RangeSliderField/css/sliderField.css');
-        // Load JS
-        craft()->templates->includeJsResource('RangeSliderField/js/sliderField.min.js');
+		$id = craft()->templates->formatInputId($name);
 
-         $id = craft()->templates->formatInputId($name);
-
-        return craft()->templates->render('RangeSliderField/_fields/input', array(
-            'name'  => $name,
-            'value' => $value,
-            'settings' => $this->getSettings()
-        ));
-    }
-
+		return craft()->templates->render('RangeSliderField/_fields/input', array(
+			'name'  => $name,
+			'value' => $value,
+			'settings' => $this->getSettings()
+		));
+	}
 }
