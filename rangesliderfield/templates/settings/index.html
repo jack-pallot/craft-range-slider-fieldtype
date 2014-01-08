@@ -1,0 +1,32 @@
+{% import "_includes/forms" as forms %}
+
+<span style="color: #da5a47; font-weight: bold;">Min and Max values required.</span>
+{{ forms.textField({
+	label: "Minimum Value"|t,
+    instructions: "Enter a Minimum value for the slider (default 0)."|t,
+	id: 'minValue',
+	name: 'minValue',
+	size: 2,
+	value: settings.minValue,
+	errors: settings.getErrors('minValue')
+}) }}
+
+{{ forms.textField({
+	label: "Maximum Value"|t,
+    instructions: "Enter a maximum value for the slider (default 1)."|t,
+	id: 'maxValue',
+	name: 'maxValue',
+	size: 2,
+	value: settings.maxValue,
+	errors: settings.getErrors('maxValue')
+}) }}
+
+{{ forms.textField({
+	label: "Steps"|t,
+    instructions: "<em>Optional:</em> count up in steps."|t,
+	id: 'stepsValue',
+	name: 'stepsValue',
+	size: 2,
+	value: settings.stepsValue,
+	errors: settings.getErrors('stepsValue')
+}) }}

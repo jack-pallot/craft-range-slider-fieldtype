@@ -1,0 +1,23 @@
+
+{{ forms.text({
+  name: name,
+  value: (value is defined) ? value : ''
+}) }}
+
+<div class="rangeSliderField-container">
+	<input type="text" class="rangeSliderField" data-from="{{ value }}" name="{{ name }}" value="{{ settings.minValue }};{{ settings.maxValue }}" style="display: none !important;">
+</div>
+
+{% set rangeSliderFieldJs %}
+	$(document).ready(function() {
+		$(".rangeSliderField").ionRangeSlider({
+		    min: {{ settings.minValue }},                        // min value
+		    max: {{ settings.maxValue }},                       // max value
+		    type: "single",                 // slider type
+		    {% if settings.stepsValue != 0 %}
+		    	step: {{ settings.stepsValue }},                       // slider step
+		    {% endif %}
+		});
+	});
+{% endset %}
+{% includeJs rangeSliderFieldJs %}
