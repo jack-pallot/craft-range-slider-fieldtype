@@ -16,7 +16,7 @@
 
 **Features**
 
-- Browser support IE8+
+- Browser support IE9+
 - Live preview and Matrix support
 - Responsive and touch friendly
 
