@@ -1,9 +1,3 @@
-
-{{ forms.text({
-  name: name,
-  value: (value is defined) ? value : ''
-}) }}
-
 <div class="rangeSliderField-container">
 	<input type="text" class="rangeSliderField" data-from="{{ value }}" name="{{ name }}" value="{{ settings.minValue }};{{ settings.maxValue }}" style="display: none !important;">
 </div>

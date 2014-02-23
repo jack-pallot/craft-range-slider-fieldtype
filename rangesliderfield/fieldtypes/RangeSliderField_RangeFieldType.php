@@ -41,7 +41,7 @@ class RangeSliderField_RangeFieldType extends BaseFieldType
 	public function getInputHtml($name, $value)
 	{
 		// Include CSS
-		craft()->templates->includeCssResource('RangeSliderField/css/sliderField.css');
+		craft()->templates->includeCssResource('RangeSliderField/css/sliderField.min.css');
 		// Include JS
 		craft()->templates->includeJsResource('RangeSliderField/js/sliderField.min.js');
 
