@@ -1,6 +1,9 @@
 <div class="rangeSliderField-container">
-	<input type="text" class="rangeSliderField" data-from="{{ value }}" name="{{ name }}" value="{{ settings.minValue }};{{ settings.maxValue }}" style="display: none !important;">
+	<input type="text" class="rangeSliderField" data-from="{{ value }}" name="{{ name }}" value="{{ settings.minValue }};{{ settings.maxValue }}" style="display: none;">
 </div>
+
+{% includeCssResource "rangesliderfield/css/sliderfield.css" %}
+{% includeJsResource "rangesliderfield/js/sliderfield.min.js" %}
 
 {% set rangeSliderFieldJs %}
 	$(document).ready(function() {
