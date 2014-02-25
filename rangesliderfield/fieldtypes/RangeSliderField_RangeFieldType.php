@@ -28,7 +28,7 @@ class RangeSliderField_RangeFieldType extends BaseFieldType
 	 */
 	public function getSettingsHtml()
 	{
-		return craft()->templates->render('RangeSliderField/settings', array(
+		return craft()->templates->render('rangesliderfield/settings', array(
 			'settings' => $this->getSettings()
 		));
 	}
@@ -41,13 +41,13 @@ class RangeSliderField_RangeFieldType extends BaseFieldType
 	public function getInputHtml($name, $value)
 	{
 		// Include CSS
-		craft()->templates->includeCssResource('RangeSliderField/css/sliderField.min.css');
+		craft()->templates->includeCssResource('rangesliderfield/css/sliderField.min.css');
 		// Include JS
-		craft()->templates->includeJsResource('RangeSliderField/js/sliderField.min.js');
+		craft()->templates->includeJsResource('rangesliderfield/js/sliderField.min.js');
 
 		$id = craft()->templates->formatInputId($name);
 
-		return craft()->templates->render('RangeSliderField/_fields/input', array(
+		return craft()->templates->render('rangesliderfield/_fields/input', array(
 			'name'  => $name,
 			'value' => $value,
 			'settings' => $this->getSettings()
