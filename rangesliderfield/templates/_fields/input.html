@@ -1,4 +1,50 @@
 <div class="rangeSliderField-container">
+<<<<<<< HEAD
+
+	{# hidden input that stores the form range value #}
+	<input type="text"
+		{% if id is defined %}id="{{ id }}-output"{% endif %}
+		class="rangeSliderField-output"
+		{% if name is defined %}name="{{ name }}"{% endif %}
+		{% if value is defined %}value="{{ value }}"{% endif %}>
+
+	{# show sliders min and max value #}
+	<div class="rangeSliderField-minMaxContainer">
+		<span class="rangeSliderField-min">{% if settings.minValue is defined %}{{ settings.minValue }}{% endif %}</span>
+		<span class="rangeSliderField-max">{% if settings.maxValue is defined %}{{ settings.maxValue }}{% endif %}</span>
+	</div>
+
+	{# displays the value next to the slider #}
+	<span id="{{ id }}-value" class="rangeSliderField-value"></span>
+
+	{# slider input #}
+	<input
+		{% if id is defined %}id="{{ id }}-input"{% endif %}
+		class="rangeSliderField-input"
+		type="range"
+		{% if name is defined %}name="{{ name }}"{% endif %}
+		{% if value is defined %}value="{{ value }}"{% endif %}
+		{% if settings.minValue is defined %}min="{{ settings.minValue }}"{% endif %}
+		{% if settings.maxValue is defined %}max="{{ settings.maxValue }}"{% endif %}
+		{% if settings.stepsValue is defined %}step="{{ settings.stepsValue }}"{% endif %}>
+
+</div>
+
+{% includeCssResource "rangesliderfield/css/sliderfield.css" %}
+	{% set rangeSliderFieldJs %}
+		$(function(){
+		$('#{{ namespaceId }}-value').html('{{ value }}');
+		$("#{{ namespacedId }}-input")[0].oninput = function () {
+				$('#{{ namespacedId }}-value').html(this.value);
+		};
+		$("#{{ namespacedId }}-input")[0].oninput();
+			var val = $('#{{ namespacedId }}-input').val();
+			output 	= $('#{{ namespacedId }}-output');
+			output.val(val);
+			$('#{{ namespacedId }}-input').on('change', function(){
+			    output.val(this.value);
+			});
+=======
 	<input type="text" class="rangeSliderField" data-from="{{ value }}" name="{{ name }}" value="{{ settings.minValue }};{{ settings.maxValue }}" style="display: none;">
 </div>
 
@@ -14,7 +60,7 @@
 		    {% if settings.stepsValue != 0 %}
 		    	step: {{ settings.stepsValue }},                       // slider step
 		    {% endif %}
+>>>>>>> 84838943ee7a443691fff87bfeee53fbe6e35827
 		});
-	});
-{% endset %}
-{% includeJs rangeSliderFieldJs %}
+	{% endset %}
+	{% includeJs rangeSliderFieldJs %}

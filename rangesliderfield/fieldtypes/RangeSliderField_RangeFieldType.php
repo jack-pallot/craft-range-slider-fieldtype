@@ -40,12 +40,23 @@ class RangeSliderField_RangeFieldType extends BaseFieldType
 	 */
 	public function getInputHtml($name, $value)
 	{
+<<<<<<< HEAD
+	$id = craft()->templates->formatInputId($name);
+=======
+>>>>>>> 84838943ee7a443691fff87bfeee53fbe6e35827
 
-		$id = craft()->templates->formatInputId($name);
+    // Figure out what that ID is going to look like once it has been namespaced
+    $namespacedId = craft()->templates->namespaceInputId($id);
 
+<<<<<<< HEAD
+		return craft()->templates->render('rangesliderfield/_fields/input', array (
+			'id' => $id,
+=======
 		return craft()->templates->render('rangesliderfield/_fields/input', array(
+>>>>>>> 84838943ee7a443691fff87bfeee53fbe6e35827
 			'name'  => $name,
 			'value' => $value,
+			'namespacedId' => $namespacedId,
 			'settings' => $this->getSettings()
 		));
 	}
