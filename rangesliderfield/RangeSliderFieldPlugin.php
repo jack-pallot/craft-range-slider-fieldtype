@@ -10,11 +10,7 @@ class RangeSliderFieldPlugin extends BasePlugin
 
     function getVersion()
     {
-<<<<<<< HEAD
         return '2.0.0';
-=======
-        return '0.5.3';
->>>>>>> 84838943ee7a443691fff87bfeee53fbe6e35827
     }
 
     function getDeveloper()
