@@ -29,10 +29,10 @@
 
 </div>
 
-{% includeCssResource "rangesliderfield/css/sliderfield.css" %}
+{% includeCssResource "rangesliderfield/css/sliderfield.min.css" %}
 	{% set rangeSliderFieldJs %}
 		$(function(){
-		$('#{{ namespaceId }}-value').html('{{ value }}');
+		$('#{{ namespacedId }}-value').html('{{ value }}');
 		$("#{{ namespacedId }}-input")[0].oninput = function () {
 				$('#{{ namespacedId }}-value').html(this.value);
 		};
